@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#12131a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%226%22 fill=%22%23ffd166%22/%3E%3C/svg%3E">
 <title>Lane Lab · Creature Rhythm</title>
-  <script type="module" crossorigin src="./assets/index-BNMh42nF.js"></script>
+  <script type="module" crossorigin src="./assets/index-CzviYzfw.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-r-KLTdUv.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
   <h1>Lane Lab</h1>
   <p class="sub">Can you play three layered lanes at once? Pick a phrase set, play, and see where it stops being playable.</p>
   <div id="calib-status" class="row"></div>
-  <div class="mix-cta"><div><strong>Battle</strong><br><span class="hint">Pick a move per creature, perform one bar, damage lands. Repeat until the dummy breaks.</span></div><button id="menu-mix" class="primary">Open</button></div>
+  <div class="mix-cta"><div><strong>Battle</strong><br><span class="hint">Read the opponent, pick attack, Guard or Special per creature, perform one bar. Repeat until someone breaks.</span></div><button id="menu-mix" class="primary">Open</button></div>
   <h2>Phrase set</h2>
   <div id="set-list" class="sets"></div>
   <h2>Lanes: you play, play themselves, or off</h2>
@@ -40,13 +40,13 @@
 
 <section id="pick" class="panel" hidden>
   <h1>Battle</h1>
-  <p class="sub">Pick a move for each creature, then Perform: a count-in bar, one bar to play, and the damage lands. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+  <p class="sub">The opponent shows what it will do next. Pick a move for each creature (attack, Guard to block, or Special on the ★ weak spot), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+  <div id="battle" class="creature"></div>
   <div id="pick-list"></div>
   <p id="pick-verdict" class="summary"></p>
-  <div id="ladder" class="creature"></div>
   <h2>Practice speed</h2>
   <div id="pick-speeds" class="chips"></div>
-  <p class="hint">Practice plays the same moves slower for two bars and isn't counted. Perform plays one bar at full tempo and hits the dummy.</p>
+  <p class="hint">Practice plays the same moves slower for two bars and isn't counted. Perform plays one bar at full tempo and resolves the turn.</p>
   <div class="row actions">
     <button id="pick-perform" class="primary">Perform</button>
     <button id="pick-practice">Practice</button>
