@@ -6,8 +6,11 @@
 <meta name="theme-color" content="#12131a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%226%22 fill=%22%23ffd166%22/%3E%3C/svg%3E">
 <title>Lane Lab · Creature Rhythm</title>
-  <script type="module" crossorigin src="./assets/index-p9lix3uo.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-dh3UPDUe.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=Young+Serif&display=swap">
+  <script type="module" crossorigin src="./assets/index-FaGtaDuf.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BCsG3WMO.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -38,9 +41,9 @@
   <p class="build" id="build"></p>
 </section>
 
-<section id="pick" class="panel" hidden>
+<section id="pick" class="panel blend" hidden>
   <div class="cb-top">
-    <strong id="cb-title">Battle</strong>
+    <span><strong id="cb-title">Turn 1</strong> <span class="cb-place">Relay yard</span></span>
     <span class="cb-top-buttons">
       <button id="cb-help" class="cb-small" aria-label="How to play" aria-expanded="false">?</button>
       <button id="battle-quit" class="cb-small">Restart</button>
@@ -48,22 +51,27 @@
     </span>
   </div>
   <div id="cb-opps" class="cb-opps"></div>
-  <div id="battle" class="cb-intent"></div>
-  <div class="cb-field">
-    <div id="cb-help-panel" class="cb-help" hidden>
-      <p>The opponent shows what it will do next. Tap a creature or its slot and pick a move for each (attack, Guard to block, or Special on the ★ weak spot), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
-      <p id="cb-key" class="hint"></p>
-      <p class="hint">Practice plays the same moves slower for two bars and isn't counted. Speed:</p>
-      <div id="pick-speeds" class="chips"></div>
+  <div id="cb-stage" class="cb-stage">
+    <div id="battle" class="cb-intent"></div>
+    <div class="cb-field">
+      <div id="cb-help-panel" class="cb-help" hidden>
+        <p>The opponent shows what it will do next. Tap a creature or its slot and pick a move for each (attack, Guard to block, or Special on the ★ weak spot), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+        <p id="cb-key" class="hint"></p>
+        <p class="hint">Practice plays the same moves slower for two bars and isn't counted. Speed:</p>
+        <div id="pick-speeds" class="chips"></div>
+      </div>
+      <div id="cb-tray" class="cb-tray" hidden></div>
     </div>
-    <div id="cb-tray" class="cb-tray" hidden></div>
+    <div id="cb-team" class="cb-team"></div>
   </div>
-  <div id="cb-team" class="cb-team"></div>
-  <div id="pick-list" class="cb-slots"></div>
-  <div id="pick-verdict" class="cb-status"></div>
-  <div class="cb-bottom">
-    <button id="pick-practice" class="cb-small">Practice</button>
-    <button id="pick-perform" class="primary cb-perform" disabled>Pick 3 moves</button>
+  <div class="cb-hud">
+    <div id="cb-teamhp" class="cb-teamhp"></div>
+    <div id="pick-list" class="cb-slots"></div>
+    <div id="pick-verdict" class="cb-status"></div>
+    <div class="cb-bottom">
+      <button id="pick-practice" class="cb-small">Practice</button>
+      <button id="pick-perform" class="primary cb-perform" disabled>Pick 3 moves</button>
+    </div>
   </div>
 </section>
 
