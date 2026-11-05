@@ -8,9 +8,9 @@
 <title>Lane Lab · Creature Rhythm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-CCAP3lhz.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DTQCQHf0.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800&family=Young+Serif&display=swap">
+  <script type="module" crossorigin src="./assets/index-DPnncnyp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-1oyw98Vq.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -52,6 +52,8 @@
   </div>
   <div id="cb-opps" class="pk-opps"></div>
   <div id="pk-stage" class="pk-stage">
+    <svg class="pk-floor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M31 0 H69 L100 100 H0 Z" /><path class="ln" d="M43.7 0 L33.3 100 M56.3 0 L66.7 100" /></svg>
+    <div id="pk-riser" class="pk-riser"></div>
     <div id="battle" class="pk-card"></div>
     <div id="pk-team" class="pk-team"></div>
     <svg id="pk-threat" class="pk-threat" aria-hidden="true"></svg>
@@ -62,6 +64,8 @@
     </div>
   </div>
   <div id="pk-panel" class="pk-panel">
+    <div id="pk-lcd" class="pk-lcd"></div>
+    <div id="pk-leds" class="pk-leds" aria-hidden="true"></div>
     <div id="pk-menu" class="pk-menu"></div>
     <div class="pk-bottom">
       <button id="pk-back" class="pk-backbtn" hidden>‹ Back</button>
