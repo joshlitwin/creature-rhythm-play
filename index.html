@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-5Vc9AQMB.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BMs18TTR.css">
+  <script type="module" crossorigin src="./assets/index-B8O2968B.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D7ZYCyib.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -53,24 +53,25 @@
   <div id="cb-opps" class="cb-opps"></div>
   <div id="cb-stage" class="cb-stage">
     <div id="battle" class="cb-intent"></div>
-    <div id="cb-help-panel" class="cb-help" hidden>
-      <p>The opponent's box says what it will do next. Tap a creature to pick its move: its menu opens in its own lane (Attack opens Easy / Medium / Hard). When all three have a move, Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either; a tap anywhere in a creature's column plays its lane. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
-      <p id="cb-key" class="hint"></p>
-      <p class="hint">Practice plays your three moves for one bar at the speed on the button beside it (tap it to change) and isn't counted.</p>
+    <div class="cb-field">
+      <div id="cb-help-panel" class="cb-help" hidden>
+        <p>The opponent shows what it will do next. Tap a creature or its slot and pick a move for each (attack, Guard to block, or Special on the ★ weak spot), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+        <p id="cb-key" class="hint"></p>
+        <p class="hint">Practice plays your three moves for one bar at the speed on the button beside it (tap it to change) and isn't counted.</p>
+      </div>
     </div>
+    <div id="cb-team" class="cb-team"></div>
   </div>
-  <!-- Placed from the play layout (src/ui/stage.ts), so the creatures, line and rings are where the play screen draws them. -->
-  <div id="cb-line" class="cb-line" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div id="cb-lanes" class="cb-lanes"></div>
-  <div id="cb-actions" class="cb-actions">
+  <div class="cb-hud">
+    <div id="cb-teamhp" class="cb-teamhp"></div>
+    <div id="cb-tray" class="cb-tray" hidden></div>
+    <div id="pick-list" class="cb-slots"></div>
     <div id="pick-verdict" class="cb-status"></div>
     <div class="cb-bottom">
       <span class="cb-practice"><button id="pick-practice">Practice</button><button id="pick-speed" aria-label="Practice speed">70%</button></span>
       <button id="pick-perform" class="primary cb-perform" disabled>Pick 3 moves</button>
-      <button class="cb-team-move" disabled aria-label="Team move: fills with the crowd meter (not built yet)">Crowd</button>
     </div>
   </div>
-  <div id="cb-team" class="cb-team"></div>
 </section>
 
 <section id="calibrate" class="panel" hidden>
