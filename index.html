@@ -6,11 +6,8 @@
 <meta name="theme-color" content="#12131a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%226%22 fill=%22%23ffd166%22/%3E%3C/svg%3E">
 <title>Lane Lab · Creature Rhythm</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-jFztM9tK.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B9dDVXYt.css">
+  <script type="module" crossorigin src="./assets/index-CrPHDJlH.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DnHmBxNC.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -27,10 +24,11 @@
   <h1>Lane Lab</h1>
   <p class="sub">Can you play three layered lanes at once? Pick a phrase set, play, and see where it stops being playable.</p>
   <div id="calib-status" class="row"></div>
-  <div class="mix-cta"><div><strong>Battle</strong><br><span class="hint">Read the opponent, pick attack, Guard or Special per creature, perform one bar. Repeat until someone breaks.</span></div><button id="menu-mix" class="primary">Open</button></div>
+  <div class="mix-cta"><div><strong>Your band</strong><br><span class="hint">Pick three of the eight starters, one per lane, and read their moves.</span></div><button id="menu-band" class="primary">Pick</button></div>
+  <div class="mix-cta"><div><strong>Battle</strong><br><span class="hint">Pick a move for each creature, practise it slower, then perform. Placeholder creatures for now.</span></div><button id="menu-mix">Open</button></div>
   <h2>Phrase set</h2>
   <div id="set-list" class="sets"></div>
-  <h2>Lanes: you play, play themselves, or off</h2>
+  <h2>Lanes that play themselves</h2>
   <div id="auto-list" class="chips"></div>
   <p class="hint" id="controls-hint"></p>
   <div class="row actions">
@@ -41,37 +39,20 @@
   <p class="build" id="build"></p>
 </section>
 
-<section id="pick" class="panel plain" hidden>
-  <div class="pk-top">
-    <span><strong id="cb-title">Turn 1</strong> <span class="pk-place">Relay yard</span></span>
-    <span class="pk-top-buttons">
-      <button id="cb-help" aria-label="How to play" aria-expanded="false">?</button>
-      <button id="battle-quit">Restart</button>
-      <button id="pick-back">Menu</button>
-    </span>
-  </div>
-  <div id="cb-opps" class="pk-opps"></div>
-  <div id="pk-stage" class="pk-stage">
-    <svg class="pk-floor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M31 0 H69 L100 100 H0 Z" /><path class="ln" d="M43.7 0 L33.3 100 M56.3 0 L66.7 100" /></svg>
-    <div id="pk-riser" class="pk-riser"></div>
-    <div id="battle" class="pk-card"></div>
-    <div id="pk-team" class="pk-team"></div>
-    <svg id="pk-threat" class="pk-threat" aria-hidden="true"></svg>
-    <div id="cb-help-panel" class="pk-help" hidden>
-      <p>The opponent shows what it will do next. Tap a creature and give it an order (Attack, Defend, Special or Auto), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
-      <p id="cb-key" class="hint"></p>
-      <p class="hint">Practice plays your three orders for one bar at the speed on the button beside it (tap it to change) and isn't counted.</p>
-    </div>
-  </div>
-  <div id="pk-panel" class="pk-panel">
-    <div id="pk-lcd" class="pk-lcd"></div>
-    <div id="pk-leds" class="pk-leds" aria-hidden="true"></div>
-    <div id="pk-menu" class="pk-menu"></div>
-    <div class="pk-bottom">
-      <button id="pk-back" class="pk-backbtn" hidden>‹ Back</button>
-      <span id="pk-practice" class="pk-practice"><button id="pick-practice">Practice</button><button id="pick-speed" aria-label="Practice speed">70%</button></span>
-      <button id="pick-perform" class="pk-perform" disabled>Perform</button>
-    </div>
+<section id="band" class="panel" hidden></section>
+
+<section id="pick" class="panel" hidden>
+  <h1>Battle</h1>
+  <p class="sub">One lane per creature: A is your left thumb, C your right, B either. Pick a move for each. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+  <div id="pick-list"></div>
+  <p id="pick-verdict" class="summary"></p>
+  <h2>Practice speed</h2>
+  <div id="pick-speeds" class="chips"></div>
+  <p class="hint">Practice plays the same mix slower and isn't counted. Perform plays it at full tempo.</p>
+  <div class="row actions">
+    <button id="pick-perform" class="primary">Perform</button>
+    <button id="pick-practice">Practice</button>
+    <button id="pick-back">Menu</button>
   </div>
 </section>
 
