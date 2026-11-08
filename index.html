@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-Dir9vHwJ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D-LtjuEJ.css">
+  <script type="module" crossorigin src="./assets/index-4m_Elo2P.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BDP84F6h.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -24,21 +24,26 @@
 </div>
 
 <section id="menu" class="panel">
-  <h1>Lane Lab</h1>
-  <p class="sub">Can you play three layered lanes at once? Pick a phrase set, play, and see where it stops being playable.</p>
+  <h1>Creature Rhythm</h1>
+  <p class="sub">Lab build. The battle is the game; the rest are tools for testing it.</p>
+  <div class="mix-cta home"><div><strong>Battle</strong><br><span id="menu-battle-sum" class="hint"></span></div><button id="menu-mix" class="primary">Play</button></div>
+  <h2>Opponent</h2>
+  <div id="opp-list" class="sets"></div>
+  <h2>Your band</h2>
+  <div class="mix-cta"><div id="menu-band-sum" class="hint"></div><button id="menu-band">Change</button></div>
+  <h2>This device</h2>
   <div id="calib-status" class="row"></div>
-  <div class="mix-cta"><div><strong>Your band</strong><br><span class="hint">Pick up to three of the eight starters, one per spot, and read their moves.</span></div><button id="menu-band">Pick</button></div>
-  <div class="mix-cta"><div><strong>Battle</strong><br><span class="hint">Your band on the stage: read the opponent, pick each creature's move or swap one in, perform one bar. Repeat until someone breaks.</span></div><button id="menu-mix" class="primary">Open</button></div>
-  <h2>Phrase set</h2>
-  <div id="set-list" class="sets"></div>
-  <h2>Lanes: you play, play themselves, or off</h2>
-  <div id="auto-list" class="chips"></div>
-  <p class="hint" id="controls-hint"></p>
-  <div class="row actions">
-    <button id="start" class="primary">Play</button>
-    <button id="menu-knobs">Knobs</button>
-    <button id="menu-log">Log</button>
-  </div>
+  <div class="row actions"><button id="menu-log">Log</button><button id="menu-knobs">Knobs</button></div>
+  <details id="lab-tools" class="lab-tools">
+    <summary>Lane lab: the old phrase-set tests</summary>
+    <p class="hint">Can you play three layered lanes at once? Pick a phrase set, play, and see where it stops being playable.</p>
+    <h2>Phrase set</h2>
+    <div id="set-list" class="sets"></div>
+    <h2>Lanes: you play, play themselves, or off</h2>
+    <div id="auto-list" class="chips"></div>
+    <p class="hint" id="controls-hint"></p>
+    <div class="row actions"><button id="start" class="primary">Play phrase set</button></div>
+  </details>
   <p class="build" id="build"></p>
 </section>
 
@@ -61,7 +66,7 @@
     <div id="pk-team" class="pk-team"></div>
     <svg id="pk-threat" class="pk-threat" aria-hidden="true"></svg>
     <div id="cb-help-panel" class="pk-help" hidden>
-      <p>The opponent shows what it will do next. Tap a creature and give it an order (Attack, Defend, Special or Auto), then Perform: a count-in bar, one bar to play, and both sides resolve. Repeat. A is your left thumb, C your right, B either. Auto plays itself and always grades On. Placeholder creatures and moves.</p>
+      <p>The opponent shows what it will do next. Tap a creature and pick one of its moves (or Swap), then Perform: a count-in, each phrase twice, and both sides resolve on the stage. Lane 1 is your left thumb, lane 3 your right, lane 2 either. Notes joined by a bar are one press. ▲ strong / ▼ weak is the creature's type against this opponent. Placeholder creatures, moves and numbers.</p>
       <p id="cb-key" class="hint"></p>
       <p class="hint">Practice plays your three orders for one bar at the speed on the button beside it (tap it to change) and isn't counted.</p>
     </div>
