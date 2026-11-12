@@ -1,0 +1,1 @@
+const e={pool:{c:11,r:20,w:4,h:3},hallDoor:{c:6,r:28},ride:{c:8,r:30}};function l(r){return r.kind==="npc"?null:r.type==="echo-pool"?"pool":r.type==="echo-horn"?"horn":r.type==="door"&&r.cells.some(o=>o.c===e.hallDoor.c&&o.r===e.hallDoor.r)?"hallDoor":null}const n={interact:()=>!1,stepped:()=>{}};export{n as N,e as S,l as s};
