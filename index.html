@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-BIyFWZiv.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-kyr2moBF.css">
+  <script type="module" crossorigin src="./assets/index-CW6VDTlX.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C_jpAHbk.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -105,23 +105,33 @@
 </section>
 
 <section id="calibrate" class="panel" hidden>
-  <h1>Calibrate</h1>
-  <p class="sub">Two short tests, about 10 seconds each. Use the phone and headphones you'll play with.</p>
-  <h2>1 · Sound</h2>
-  <p class="hint">Tap on each click, one a second. Nothing on screen moves with the beat, so go by ear (eyes closed is fine). 4 clicks count you in, then 12 are measured.</p>
-  <div id="calib-pad-a" class="pad"><div class="ring"></div><div class="msg">Tap Start</div></div>
-  <div class="row"><button id="calib-go-a" class="primary">Start sound test</button><span id="calib-res-a" class="hint"></span></div>
-  <p id="calib-taps-a" class="hint taps"></p>
-  <h2>2 · Sight</h2>
-  <p class="hint">Silent. Tap when each dot sits inside the ring (its centre on the line, not its edge). 4 grey dots to settle in, then 12 are measured. Each tap leaves a white ring where the dot was when the tap registered.</p>
-  <canvas id="calib-canvas" class="pad"></canvas>
-  <div class="row"><button id="calib-go-v" class="primary">Start sight test</button>
-    <span id="calib-res-v" class="hint"></span></div>
-  <p id="calib-taps-v" class="hint taps"></p>
-  <h2>Result</h2>
-  <label class="slider">Sound <input id="calib-a" type="range" min="0" max="700" step="1"><output id="calib-a-out"></output></label>
-  <label class="slider">Sight <input id="calib-v" type="range" min="-50" max="250" step="1"><output id="calib-v-out"></output></label>
-  <p id="calib-note" class="hint"></p>
+  <h1 id="calib-title">Calibrate</h1>
+  <p class="sub" id="calib-sub">Two short tests, about 10 seconds each. Use the phone and headphones you'll play with.</p>
+  <!-- In the demo (?demo=1) this is the tune-up: one step at a time, the coin ride rocking to your taps (calibrate.ts, fun). -->
+  <div class="cal-step cal-a">
+    <h2>1 · Sound</h2>
+    <p class="hint" id="calib-hint-a">Tap on each click, one a second. Nothing on screen moves with the beat, so go by ear (eyes closed is fine). 4 clicks count you in, then 12 are measured.</p>
+    <div id="calib-pad-a" class="pad"><div class="ring"></div><img id="calib-ride" class="cal-ride" alt="" hidden><div class="msg">Tap Start</div></div>
+    <div id="calib-lamps-a" class="cal-lamps" aria-hidden="true" hidden></div>
+    <div class="row"><button id="calib-go-a" class="primary">Start sound test</button><button id="calib-next" hidden>Next</button><span id="calib-res-a" class="hint"></span></div>
+    <p id="calib-taps-a" class="hint taps"></p>
+  </div>
+  <div class="cal-step cal-v">
+    <h2>2 · Sight</h2>
+    <p class="hint" id="calib-hint-v">Silent. Tap when each dot sits inside the ring (its centre on the line, not its edge). 4 grey dots to settle in, then 12 are measured. Each tap leaves a white ring where the dot was when the tap registered.</p>
+    <canvas id="calib-canvas" class="pad"></canvas>
+    <div id="calib-lamps-v" class="cal-lamps" aria-hidden="true" hidden></div>
+    <div class="row"><button id="calib-go-v" class="primary">Start sight test</button>
+      <span id="calib-res-v" class="hint"></span></div>
+    <p id="calib-taps-v" class="hint taps"></p>
+  </div>
+  <div class="cal-step cal-done">
+    <h2 id="calib-done-title">Result</h2>
+    <label class="slider">Sound <input id="calib-a" type="range" min="0" max="700" step="1"><output id="calib-a-out"></output></label>
+    <label class="slider">Sight <input id="calib-v" type="range" min="-50" max="250" step="1"><output id="calib-v-out"></output></label>
+    <p id="calib-note" class="hint"></p>
+    <p id="calib-done" class="cal-done-line" hidden></p>
+  </div>
   <div class="row actions">
     <button id="calib-save" class="primary">Save</button>
     <button id="calib-back">Back</button>
