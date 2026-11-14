@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Dela+Gothic+One&family=DM+Mono:wght@500&family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800&family=Young+Serif&display=swap">
-  <script type="module" crossorigin src="./assets/index-CYxoWmkE.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DRwp-O6m.css">
+  <script type="module" crossorigin src="./assets/index-ClBVsaKY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BB1iMCET.css">
 </head>
 <body>
 <canvas id="stage"></canvas>
@@ -39,6 +39,13 @@
     <p class="hint">Nothing? Turn the volume up, and silent mode off.</p>
   </div>
 </section>
+
+<!-- The demo's opening: what happened to the world, one line at a time on a dark screen (words in src/world/lines.ts INTRO). -->
+<div id="intro" class="intro" hidden>
+  <button id="intro-skip" type="button">Skip</button>
+  <p id="intro-line" aria-live="polite"></p>
+  <span class="intro-tap" aria-hidden="true">tap</span>
+</div>
 
 <section id="menu" class="panel">
   <h1>Creature Rhythm</h1>
